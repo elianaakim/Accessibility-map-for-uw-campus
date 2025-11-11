@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UW Campus Accessibility Map</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UW Campus Accessibility Map</h1>
+            <p>Find the most accessible routes across campus</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <section class="route-finder">
+                    <h2>Find Route</h2>
+                    <div class="form-group">
+                        <label for="start-location">Start Location:</label>
+                        <select id="start-location" class="location-select">
+                            <option value="">Select a building...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-location">End Location:</label>
+                        <select id="end-location" class="location-select">
+                            <option value="">Select a building...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="route-type">Route Preference:</label>
+                        <select id="route-type" class="route-select">
+                            <option value="shortest">Shortest Distance</option>
+                            <option value="accessible">Most Accessible</option>
+                        </select>
+                    </div>
+                    <button id="find-route-btn" class="btn btn-primary">Find Route</button>
+                    <div id="route-info" class="route-info"></div>
+                </section>
+
+                <section class="feedback-section">
+                    <h2>Report Issue</h2>
+                    <p class="section-description">Help improve campus accessibility by reporting issues</p>
+                    <div class="form-group">
+                        <label for="issue-location">Location:</label>
+                        <select id="issue-location" class="location-select">
+                            <option value="">Select a location...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issue-type">Issue Type:</label>
+                        <select id="issue-type" class="issue-select">
+                            <option value="elevator">Broken Elevator</option>
+                            <option value="stairs">Steep/Difficult Stairs</option>
+                            <option value="lighting">Poor Lighting</option>
+                            <option value="ramp">Ramp Issue</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issue-description">Description:</label>
+                        <textarea id="issue-description" class="issue-description" rows="3" 
+                                  placeholder="Please describe the accessibility issue..."></textarea>
+                    </div>
+                    <button id="report-issue-btn" class="btn btn-warning">Report Issue</button>
+                </section>
+
+                <section class="issues-list">
+                    <h2>Recent Reports</h2>
+                    <div id="issues-container" class="issues-container">
+                        <p class="no-issues">No issues reported yet</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="map-panel">
+                <div id="campus-map" class="campus-map">
+                    <svg id="map-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+                        <!-- Campus map will be rendered here -->
+                    </svg>
+                </div>
+                <div id="map-legend" class="map-legend">
+                    <h3>Legend</h3>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #4CAF50;"></span>
+                        <span>Buildings</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #2196F3;"></span>
+                        <span>Selected Route</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #ff9800;"></span>
+                        <span>Accessible Path</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #f44336;"></span>
+                        <span>Reported Issues</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dijkstra.js"></script>
+    <script src="campusData.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
