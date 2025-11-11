@@ -2,7 +2,6 @@
 
 An innovative web application designed to help users find the shortest and most accessible routes across campus and city environments. This project extends traditional pathfinding algorithms to prioritize accessibility factors like ramps, elevators, and adequate lighting, while also incorporating real-time, crowdsourced data.
 
----
 
 ## ✨ Features
 
@@ -15,7 +14,6 @@ An innovative web application designed to help users find the shortest and most 
 * **Modern Web Stack:** Built with **TypeScript** and **React** for a robust, scalable, and responsive user experience.
 * **Data-Driven Decisions:** Utilizes custom-parsed geographical data (CSV) for campus paths and building locations.
 
----
 
 ## 💻 Technologies Used
 
@@ -27,7 +25,6 @@ An innovative web application designed to help users find the shortest and most 
 | **Mapping** | (Add your specific map library here, e.g., **Leaflet** or **Google Maps API**) | Interactive display of paths, buildings, and accessibility flags. |
 | **Data** | **CSV Parsing** | Ingesting and modeling geographical and accessibility data. |
 
----
 
 ## 🚀 Getting Started
 
@@ -76,7 +73,6 @@ Follow these steps to set up and run the project locally.
 
 Open your browser to the client URL (e.g., `http://localhost:8080`) to view the application.
 
----
 
 ## 💡 Accessibility Weighting Logic
 
@@ -96,7 +92,6 @@ Where:
 
 This system ensures that paths with high accessibility features are prioritized, even if they are slightly longer than the physically shortest route.
 
----
 
 ## 👥 Contributing
 
